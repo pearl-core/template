@@ -1,16 +1,6 @@
 Pearl Package Template
 ======================
 
-Use this repository as template for new [Pearl](https://github.com/pearl-core/pearl) Packages.
-
-The directory `tests` containg a template for doing unit and integration tests.
-The integration tests can be run by [Travis](https://travis-ci.org/) CI.
-
-To run the unit tests:
-```sh
-    ./tests/unit-tests/unit-tests.sh
-```
-
 |Project Status|Communication|
 |:-----------:|:-----------:|
 |[![Build status](https://api.travis-ci.org/pearl-core/template.png?branch=master)](https://travis-ci.org/pearl-core/template) | [![Join the gitter chat at https://gitter.im/pearl-core/pearl](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pearl-core/pearl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) |
@@ -20,6 +10,23 @@ To run the unit tests:
 - [Quickstart](#quickstart)
 - [Installation](#installation)
 - [Troubleshooting](#troubleshooting)
+
+How to use this template
+========================
+Copy the content of this template and use it for creating
+new [Pearl](https://github.com/pearl-core/pearl) Packages.
+
+The directory `tests` containg a template for doing unit and integration tests.
+The integration tests can be run via [Travis](https://travis-ci.org/) CI.
+
+To run the unit tests:
+```sh
+    ./tests/unit-tests/unit-tests.sh
+```
+
+Follow the main
+[Pearl CONTRIBUTING](https://github.com/pearl-core/pearl/blob/master/CONTRIBUTING.md) file
+for more details.
 
 Description
 ===========

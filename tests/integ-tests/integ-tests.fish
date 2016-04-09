@@ -10,7 +10,7 @@ set -x PEARL_ROOT $argv[1]
 
 # From here is where you can add the integ tests for your packages
 
-if [ -d $PEARL_HOME/packages/default/test ]
+if [ ! -d $PEARL_HOME/packages/default/test ]
     echo "The package test does not exist after install"
     exit 1
 end
