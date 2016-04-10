@@ -4,6 +4,9 @@
 # - *PEARL_HOME*    - Pearl location
 # - *PEARL_ROOT*    - Pearl script location
 # - *PEARL_PKGDIR*  - Pearl package location
+#
+# Furthermore, inside the hook functions the utils.sh functions can be used:
+# https://github.com/pearl-core/pearl/blob/master/lib/utils.sh
 
 function post_install(){
     return 0
