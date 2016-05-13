@@ -36,6 +36,7 @@ Introduce in this section the following information:
 - description: The package description
 - author: Creator name/surname
 - username: Creator username
+- OS compatibility: linux, osx, cygwin, any
 
 Quickstart
 ==========
