@@ -1,4 +1,16 @@
 
+# The Pearl setup is useful when the package requires
+# library dependencies such as $PEARL_ROOT/lib/utils/utils.sh
+function pearlSetUp() {
+    export PEARL_ROOT=$(TMPDIR=/tmp mktemp -d -t pearl-test-root.XXXXXXX)
+    git clone --quiet https://github.com/pearl-core/pearl.git $PEARL_ROOT
+}
+
+function pearlTearDown(){
+    rm -rf $PEARL_ROOT
+    unset PEARL_ROOT
+}
+
 function setUpUnitTests(){
     OUTPUT_DIR="${SHUNIT_TMPDIR}/output"
     mkdir "${OUTPUT_DIR}"
