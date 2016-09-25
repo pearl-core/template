@@ -1,7 +1,7 @@
 #!/bin/bash
 # The following is just a template test for new Pearl packages
 
-source "$(dirname $0)/utils.sh"
+source "$(dirname $0)/../utils/utils.sh"
 
 # Disable the exiterr
 set +e
@@ -27,4 +27,4 @@ function test_template_error(){
     assertCommandFailOnStatus 1 false
 }
 
-source $(dirname $0)/shunit2
+source $(dirname $0)/../utils/shunit2
