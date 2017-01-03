@@ -55,7 +55,7 @@ Dependencies
 The main dependencies are the following:
 
 - [dependency 1](https://www.dependency1.org)
-- [dependency 2](https://www.dependency1.org)
+- [dependency 2](https://www.dependency2.org)
 
 Troubleshooting
 ===============
