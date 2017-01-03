@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # The following is just a template test for new Pearl packages
-
 source "$(dirname $0)/../utils/utils.sh"
+
+TEMPLATE_LOCATION="$(dirname $0)/../.."
 
 # Disable the exiterr
 set +e
@@ -10,12 +11,20 @@ function oneTimeSetUp(){
     setUpUnitTests
 }
 
-function setUp(){
+function oneTimeTearDown(){
     :
 }
 
+function setUp(){
+    # In case the package does not require Pearl
+    # libraries as dependencies, comment the following instruction:
+    pearlSetUp
+}
+
 function tearDown(){
-    :
+    # In case the package does not require Pearl
+    # libraries as dependencies, comment the following instruction:
+    pearlTearDown
 }
 
 function test_template(){
@@ -25,6 +34,16 @@ function test_template(){
 
 function test_template_error(){
     assertCommandFailOnStatus 1 false
+}
+
+function test_template_no_pearl_root_defined(){
+    unset PEARL_ROOT
+    assertCommandFailOnStatus 1 $TEMPLATE_LOCATION/bin/CHANGEME
+}
+
+function test_template_no_pearl_root_directory(){
+    export PEARL_ROOT="not-a-directory"
+    assertCommandFailOnStatus 2 $TEMPLATE_LOCATION/bin/CHANGEME
 }
 
 source $(dirname $0)/../utils/shunit2

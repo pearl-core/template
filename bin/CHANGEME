@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# In bin/* is where you can put all the scripts of the package
+# Description: here
+
+set -e -o pipefail
+
+[[ -z "$PEARL_ROOT" ]] && { echo "Error: The variable PEARL_ROOT must be specified in order to run this script."; exit 1; }
+[[ -d "$PEARL_ROOT" ]] || { echo "Error: The value in variable PEARL_ROOT is not a directory."; exit 2; }
+
+# Import Pearl libraries if needed during the script logic
+source $PEARL_ROOT/lib/utils/utils.sh
+
+# Import Pearl OSX compatibility if the package is required to work on OSX
+source $PEARL_ROOT/lib/utils/osx-compat.sh
+# Update PATH for OSX
+pearl_update_path
+
