@@ -1,4 +1,4 @@
-# Remove this file if a bash/zsh hook is not needed
+# Remove this file if a zsh configurations not needed
 #
 # The following variables can be used:
 # - *PEARL_HOME*       - Pearl location

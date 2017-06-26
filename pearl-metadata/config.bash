@@ -1,4 +1,4 @@
-# Remove this file if a bash hook is not needed
+# Remove this file if a bash configurations are not needed
 #
 # The following variables can be used:
 # - *PEARL_HOME*       - Pearl location

@@ -1,4 +1,4 @@
-" Remove this file if a vim hook is not needed
+" Remove this file if a vim configurations are not needed
 "
 " The following variables can be used:
 " - *PEARL_HOME*       - Pearl location
