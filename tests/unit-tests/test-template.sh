@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # The following is just a template test for new Pearl packages
-source "$(dirname $0)/../utils/utils.sh"
+PKG_LOCATION="$(dirname $0)/../.."
 
-TEMPLATE_LOCATION="$(dirname $0)/../.."
+source "$PKG_LOCATION/tests/bunit/utils/utils.sh"
+source "$PKG_LOCATION/tests/test-utils/utils.sh"
 
 # Disable the exiterr
 set +e
@@ -38,12 +39,12 @@ function test_template_error(){
 
 function test_template_no_pearl_root_defined(){
     unset PEARL_ROOT
-    assertCommandFailOnStatus 1 $TEMPLATE_LOCATION/bin/CHANGEME
+    assertCommandFailOnStatus 1 $PKG_LOCATION/bin/CHANGEME
 }
 
 function test_template_no_pearl_root_directory(){
     export PEARL_ROOT="not-a-directory"
-    assertCommandFailOnStatus 2 $TEMPLATE_LOCATION/bin/CHANGEME
+    assertCommandFailOnStatus 2 $PKG_LOCATION/bin/CHANGEME
 }
 
-source $(dirname $0)/../utils/shunit2
+source $PKG_LOCATION/tests/bunit/utils/shunit2
