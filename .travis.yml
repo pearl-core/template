@@ -1,4 +1,3 @@
-# vim: ft=yaml
 os:
   - linux
   - osx
@@ -12,16 +11,16 @@ env:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./tests/integ-tests/install-linux-deps.sh; fi;
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ./tests/integ-tests/install-osx-deps.sh; fi;
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]];   then ./tests/integ-tests/install-osx-deps.sh;   fi;
 
 install:
   - curl -sL https://git.io/vV4yE | sh
   - source ~/.bashrc
-  - echo "PEARL_PACKAGES[test]=\"${PWD}\"" >> ~/.config/pearl/pearl.conf
+  - echo "PEARL_PACKAGES['test']='${PWD}'" >> ~/.config/pearl/pearl.conf
 
 script:
   - ./tests/bunit/bin/checkstyle.sh ./bin/ ./lib/
   - ./tests/bunit/bin/unit-tests.sh ./tests/unit-tests
-  - ./tests/integ-tests/integ-tests.sh
-  - zsh ./tests/integ-tests/integ-tests.sh
+  - bash ./tests/integ-tests/integ-tests.sh
+  - zsh  ./tests/integ-tests/integ-tests.sh
   - fish ./tests/integ-tests/integ-tests.fish
