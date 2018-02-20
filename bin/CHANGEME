@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # In bin/* is where you can put all the scripts of the package
 # Description: here
 
@@ -6,18 +7,18 @@ set -e -o pipefail
 
 # Optional: Check if PEARL_ROOT is properly defined
 # (Use this only if the variable is required within the package)
-[[ -z "$PEARL_ROOT" ]] && { echo "Error: The variable PEARL_ROOT must be specified in order to run this script."; exit 1; }
-[[ -d "$PEARL_ROOT" ]] || { echo "Error: The value in variable PEARL_ROOT is not a directory."; exit 2; }
+[[ -z "$PEARL_ROOT" ]] && { echo 'Error: The variable PEARL_ROOT must be specified in order to run this script.'; exit 1; }
+[[ -d "$PEARL_ROOT" ]] || { echo 'Error: The value in variable PEARL_ROOT is not a directory.'; exit 2; }
 
-# PATH needs to be updated since GNU Coreutils is required in OSX
-# environments. Buava `osx_update_path` cannot be used because in
-# order to load osx-compat.sh file the `readlink` command is
-# required first (circular dependency).
-GNUBIN="/usr/local/opt/coreutils/libexec/gnubin"
+# PATH needs to be updated since GNU Coreutils is required in OSX environments.
+# Buava `osx_update_path` cannot be used because in order to load the
+# osx-compat.sh file the `readlink` command is required first
+# (circular dependency).
+GNUBIN='/usr/local/opt/coreutils/libexec/gnubin'
 [ -d "$GNUBIN" ] && PATH="$GNUBIN:$PATH"
 
 # Identify the location of the current package
 PKG_ROOT="$(readlink -f $(dirname $(readlink -f "$0"))/..)"
 
 # Import buava library if needed during the script logic
-source $PKG_ROOT/buava/lib/utils.sh
+source "$PKG_ROOT/buava/lib/utils.sh"
