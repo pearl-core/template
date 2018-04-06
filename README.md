@@ -21,7 +21,7 @@ The integration tests can be run via [Travis](https://travis-ci.org/) CI.
 
 To run the unit tests:
 ```sh
-    ./tests/unit-tests/unit-tests.sh
+    ./tests/bunit/bin/unit-tests.sh ./tests/unit-tests/
 ```
 
 Follow the main
