@@ -1,10 +1,12 @@
 # Remove this file if install.sh hooks are not needed
 #
 # The following variables can be used inside the hook functions:
-# - *PEARL_HOME*       - Pearl location
-# - *PEARL_ROOT*       - Pearl script location
-# - *PEARL_PKGDIR*     - Pearl package location
-# - *PEARL_PKGVARDIR*  - Pearl package var location
+# - *PEARL_HOME*        - Pearl location
+# - *PEARL_ROOT*        - Pearl script location
+# - *PEARL_PKGNAME*     - Pearl package name
+# - *PEARL_PKGREPONAME* - Pearl pacakge repository name
+# - *PEARL_PKGDIR*      - Pearl package location
+# - *PEARL_PKGVARDIR*   - Pearl package var location
 #
 # Furthermore, the hook functions can use all the utility functions contained
 # in the utils.sh files on both Buava and Pearl:
