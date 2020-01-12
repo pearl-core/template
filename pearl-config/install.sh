@@ -2,16 +2,15 @@
 #
 # The following variables can be used inside the hook functions:
 # - *PEARL_HOME*        - Pearl location
-# - *PEARL_ROOT*        - Pearl script location
 # - *PEARL_PKGNAME*     - Pearl package name
-# - *PEARL_PKGREPONAME* - Pearl pacakge repository name
+# - *PEARL_PKGREPONAME* - Pearl package repository name
 # - *PEARL_PKGDIR*      - Pearl package location
 # - *PEARL_PKGVARDIR*   - Pearl package var location
 #
 # Furthermore, the hook functions can use all the utility functions contained
 # in the utils.sh files on both Buava and Pearl:
 # https://github.com/fsquillace/buava/blob/master/lib/utils.sh
-# https://github.com/pearl-core/pearl/blob/master/lib/utils/utils.sh
+# https://github.com/pearl-core/pearl/blob/master/src/pearllib/static/builtins/utils.sh
 
 function post_install() {
     # To link an executable file inside the package to the PATH variable:
@@ -41,10 +40,6 @@ function post_update() {
 }
 
 function pre_remove() {
-    return 0
-}
-
-function post_remove() {
     # To unlink an executable file inside the package from the PATH variable:
     # unlink_from_path "${PEARL_PKGDIR}/bin/mybinfile"
 
