@@ -38,14 +38,4 @@ function test_template_error() {
     assertCommandFailOnStatus 1 false
 }
 
-function test_template_no_pearl_root_defined() {
-    unset PEARL_ROOT
-    assertCommandFailOnStatus 1 "$PKG_LOCATION/bin/CHANGEME"
-}
-
-function test_template_no_pearl_root_directory() {
-    export PEARL_ROOT="not-a-directory"
-    assertCommandFailOnStatus 2 "$PKG_LOCATION/bin/CHANGEME"
-}
-
 source "$PKG_LOCATION/tests/bunit/utils/shunit2"
